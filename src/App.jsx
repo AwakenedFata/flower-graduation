@@ -6,7 +6,9 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [loadingProgress, setLoadingProgress] = useState(0);
   const [modelError, setModelError] = useState(false);
+  const [audioPlaying, setAudioPlaying] = useState(false);
   const modelRef = useRef(null);
+  const audioRef = useRef(null);
 
   useEffect(() => {
     // Inisialisasi animasi setelah halaman dimuat
@@ -76,7 +78,17 @@ function App() {
     }
     return petals;
   };
-
+  // Toggle audio play/pause
+  const toggleAudio = () => {
+    if (audioRef.current) {
+      if (audioPlaying) {
+        audioRef.current.pause();
+      } else {
+        audioRef.current.play();
+      }
+      setAudioPlaying(!audioPlaying);
+    }
+  };
   return (
     <>
       {loading && (
@@ -94,7 +106,22 @@ function App() {
       )}
 
       <div className="night"></div>
+      {/* Audio Player */}
+      <audio
+        ref={audioRef}
+        src="/audio/youll-be-in-my-heart.mp3"
+        loop
+        preload="auto"
+      />
 
+      {/* Audio Control Button */}
+      <button
+        className="audio-control"
+        onClick={toggleAudio}
+        aria-label={audioPlaying ? "Pause music" : "Play music"}
+      >
+        {audioPlaying ? "🔊" : "🔇"}
+      </button>
       <div className="main-container">
         {/* Left side flowers */}
         <div className="flower-container flower-container--left">
@@ -152,8 +179,7 @@ function App() {
             ar-modes="webxr scene-viewer quick-look"
             loading="eager"
             poster="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-          >
-          </model-viewer>
+          ></model-viewer>
           <h2 className="love-text">My Love Risa</h2>
         </div>
 

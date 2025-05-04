@@ -163,7 +163,7 @@ model-viewer {
 .loading-text {
   margin-top: 20px;
   font-size: 1.2rem;
-  font-family: var(--font-great-vibes);
+  font-family: sans-serif;
   color: #be123c;
 }
 
@@ -871,4 +871,38 @@ model-viewer {
 .loading-error {
   max-width: 80%;
   text-align: center;
+}
+.audio-control {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.audio-control:hover {
+  transform: scale(1.1);
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+@media (max-width: 768px) {
+  .audio-control {
+    bottom: 15px;
+    right: 15px;
+    width: 35px;
+    height: 35px;
+    font-size: 18px;
+  }
 }
