@@ -110,7 +110,7 @@ model-viewer {
   font-family: var(--font-great-vibes);
   font-size: 2.8rem;
   font-weight: 800;
-  background: linear-gradient(45deg, #ffffff, #d6c7c7);
+  background: linear-gradient(45deg, #ffffff, #baa5a5);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
@@ -789,7 +789,7 @@ model-viewer {
 /* Tambahkan breakpoint khusus untuk layar yang lebih kecil */
 @media (max-width: 480px) {
   .model-container {
-    width: 70%; /* Lebar model container lebih besar */
+    width:70%; /* Lebar model container lebih besar */
   }
 
   .flower-container {
@@ -798,7 +798,7 @@ model-viewer {
 
   .flower-container--left .flower--1 {
     left: 10vw;
-    bottom: 25vh;
+    bottom: 35vh;
     transform: scale(0.5);
   }
 
@@ -807,8 +807,8 @@ model-viewer {
   }
 
   .flower-container--right .flower--2 {
-    right: 20vw;
-    bottom: 30vh;
+    right: 24vw;
+    bottom: 40vh;
     transform:   scale(0.5);
   }
 
@@ -817,8 +817,7 @@ model-viewer {
   }
 
   .flower-container--right .flower--3 {
-    right: 1vw;
-    bottom: 30vh;
+    bottom: 38vh;
     transform: scale(0.5);
   }
 
@@ -827,12 +826,14 @@ model-viewer {
   }
 
   .graduation-text {
+    padding-top: 80px;
     font-size: 3.5rem;
   }
 
   .love-text {
     transform: translateY(-30px);
     font-size: 4rem;
+    padding-bottom: 50px ;
   }
 }
 
