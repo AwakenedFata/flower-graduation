@@ -131,7 +131,7 @@ function App() {
       {/* Audio Player */}
       <audio
         ref={audioRef}
-        src="/audio/youll-be-in-my-heart.mp3"
+        src="./audio/youll-be-in-my-heart.mp3"
         loop
         preload="auto"
       />
