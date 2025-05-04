@@ -194,17 +194,76 @@ model-viewer {
   height: 70vmin;
   width: 1.5vmin;
   background-image: linear-gradient(to left, rgba(0, 0, 0, 0.2), transparent, rgba(255, 255, 255, 0.2)),
-    linear-gradient(to top, transparent 10%, var(--flower-stem), var(--flower-color));
+  linear-gradient(to top, transparent 10%, var(--flower-stem), var(--flower-color));
   box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.5);
   animation: grow-flower-tree 4s backwards;
   animation-delay: 0.3s;
 }
 
-/* Right side flower positioning */
-.flower-container--right .flower--2 {
+.flower-container--left .flower--2 {
   position: absolute;
   bottom: 10vmin;
   right: 25vmin;
+  transform-origin: bottom center;
+  z-index: 10;
+  transform: rotate(30deg);
+  animation: moving-flower-2 4s linear infinite;
+}
+
+.flower-container--left .flower--2 .flower__line {
+  height: 60vmin;
+  width: 1.5vmin;
+  background-image: linear-gradient(to left, rgba(0, 0, 0, 0.2), transparent, rgba(255, 255, 255, 0.2)),
+    linear-gradient(to top, transparent 10%, var(--flower-stem), var(--flower-color));
+  box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.5);
+  animation: grow-flower-tree 4s backwards;
+  animation-delay: 0.8s;
+}
+
+.flower-container--left .flower--3 {
+  position: absolute;
+  bottom: 10vmin;
+  right: 15vmin;
+  transform-origin: bottom center;
+  z-index: 10;
+  transform: rotate(-15deg);
+  animation: moving-flower-3 4s linear infinite;
+}
+
+.flower-container--left .flower--3 .flower__line {
+  height: 55vmin;
+  width: 1.5vmin;
+  background-image: linear-gradient(to left, rgba(0, 0, 0, 0.2), transparent, rgba(255, 255, 255, 0.2)),
+    linear-gradient(to top, transparent 10%, var(--flower-stem), var(--flower-color));
+  box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.5);
+  animation: grow-flower-tree 4s backwards;
+  animation-delay: 0.9s;
+}
+
+
+/* Right side flower positioning */
+.flower-container--right .flower--1 {
+  position: absolute;
+  bottom: 10vmin;
+  left: 15vmin;
+  transform-origin: bottom center;
+  z-index: 10;
+  animation: moving-flower-1 4s linear infinite;
+}
+
+.flower-container--right .flower--1 .flower__line {
+  height: 70vmin;
+  width: 1.5vmin;
+  background-image: linear-gradient(to left, rgba(0, 0, 0, 0.2), transparent, rgba(255, 255, 255, 0.2)),
+  linear-gradient(to top, transparent 10%, var(--flower-stem), var(--flower-color));
+  box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.5);
+  animation: grow-flower-tree 4s backwards;
+  animation-delay: 0.3s;
+}
+.flower-container--right .flower--2 {
+  position: absolute;
+  bottom: 10vmin;
+  right: 42vmin;
   transform-origin: bottom center;
   z-index: 10;
   transform: rotate(30deg);
@@ -224,7 +283,7 @@ model-viewer {
 .flower-container--right .flower--3 {
   position: absolute;
   bottom: 10vmin;
-  right: 15vmin;
+  right: 35vmin;
   transform-origin: bottom center;
   z-index: 10;
   transform: rotate(-15deg);
@@ -803,6 +862,16 @@ model-viewer {
   }
 
   .flower-container--left .flower--1 .flower__line {
+    height: 45vmin;
+  }
+  
+  .flower-container--right .flower--1 {
+    right: 10vh;
+    bottom: 10vh;
+    transform: scale(0.5);
+  }
+
+  .flower-container--right .flower--1 .flower__line {
     height: 45vmin;
   }
 

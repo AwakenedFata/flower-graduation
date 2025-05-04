@@ -170,6 +170,48 @@ function App() {
               </div>
             </div>
 
+            <div className="flower flower--2">
+              <div className="flower__leafs flower__leafs--2">
+                <div className="flower__leaf flower__leaf--1"></div>
+                <div className="flower__leaf flower__leaf--2"></div>
+                <div className="flower__leaf flower__leaf--3"></div>
+                <div className="flower__leaf flower__leaf--4"></div>
+                <div className="flower__white-circle"></div>
+
+                <div className="flower__light flower__light--1"></div>
+                <div className="flower__light flower__light--2"></div>
+                <div className="flower__light flower__light--3"></div>
+                <div className="flower__light flower__light--4"></div>
+              </div>
+              <div className="flower__line">
+                <div className="flower__line__leaf flower__line__leaf--1"></div>
+                <div className="flower__line__leaf flower__line__leaf--2"></div>
+                <div className="flower__line__leaf flower__line__leaf--3"></div>
+                <div className="flower__line__leaf flower__line__leaf--4"></div>
+              </div>
+            </div>
+
+            <div className="flower flower--3">
+              <div className="flower__leafs flower__leafs--3">
+                <div className="flower__leaf flower__leaf--1"></div>
+                <div className="flower__leaf flower__leaf--2"></div>
+                <div className="flower__leaf flower__leaf--3"></div>
+                <div className="flower__leaf flower__leaf--4"></div>
+                <div className="flower__white-circle"></div>
+
+                <div className="flower__light flower__light--1"></div>
+                <div className="flower__light flower__light--2"></div>
+                <div className="flower__light flower__light--3"></div>
+                <div className="flower__light flower__light--4"></div>
+              </div>
+              <div className="flower__line">
+                <div className="flower__line__leaf flower__line__leaf--1"></div>
+                <div className="flower__line__leaf flower__line__leaf--2"></div>
+                <div className="flower__line__leaf flower__line__leaf--3"></div>
+                <div className="flower__line__leaf flower__line__leaf--4"></div>
+              </div>
+            </div>
+
             <div className="growing-grass">
               <div className="flower__grass flower__grass--1">
                 <div className="flower__grass--top"></div>
@@ -209,6 +251,26 @@ function App() {
         {/* Right side flowers */}
         <div className="flower-container flower-container--right">
           <div className="flowers">
+            <div className="flower flower--1">
+              <div className="flower__leafs flower__leafs--1">
+                <div className="flower__leaf flower__leaf--1"></div>
+                <div className="flower__leaf flower__leaf--2"></div>
+                <div className="flower__leaf flower__leaf--3"></div>
+                <div className="flower__leaf flower__leaf--4"></div>
+                <div className="flower__white-circle"></div>
+
+                <div className="flower__light flower__light--1"></div>
+                <div className="flower__light flower__light--2"></div>
+                <div className="flower__light flower__light--3"></div>
+                <div className="flower__light flower__light--4"></div>
+              </div>
+              <div className="flower__line">
+                <div className="flower__line__leaf flower__line__leaf--1"></div>
+                <div className="flower__line__leaf flower__line__leaf--2"></div>
+                <div className="flower__line__leaf flower__line__leaf--3"></div>
+                <div className="flower__line__leaf flower__line__leaf--4"></div>
+              </div>
+            </div>
             <div className="flower flower--2">
               <div className="flower__leafs flower__leafs--2">
                 <div className="flower__leaf flower__leaf--1"></div>
