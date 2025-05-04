@@ -14,6 +14,7 @@
   "homepage": "https://awakenedfata.github.io/flower-graduation",
   "dependencies": {
     "@google/model-viewer": "^4.1.0",
+    "bootstrap-icons": "^1.12.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
