@@ -154,7 +154,7 @@ function App() {
             poster="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
           >
           </model-viewer>
-          <h2 className="love-text">my love Risa</h2>
+          <h2 className="love-text">My Love Risa</h2>
         </div>
 
         {/* Right side flowers */}

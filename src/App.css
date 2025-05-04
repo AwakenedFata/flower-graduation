@@ -7,12 +7,13 @@
 }
 
 :root {
-  --dark-color: #000;
+  --dark-color: #000000;
   --flower-color: #39c6d6;
   --flower-stem: #14757a;
   --grass-color: #159faa;
   --fl-speed: 0.8s;
   --font-great-vibes: "Great Vibes", cursive;
+  --text-color: linear-gradient(45deg, #ffffff, #7a7171);
 }
 
 body {
@@ -85,13 +86,14 @@ model-viewer {
   height: 80vh;
   background-color: transparent;
   --poster-color: transparent;
+  filter: hue-rotate(200deg) saturate(1.5); /* Warna biru cerah */
 }
 
 .graduation-text {
   font-family: var(--font-great-vibes);
   font-size: 3.5rem;
-  font-weight: normal;
-  background: linear-gradient(45deg, #be123c, #fb7185);
+  font-weight: 700;
+  background: linear-gradient(45deg, #ffffff, #7a7171);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
@@ -107,8 +109,12 @@ model-viewer {
 .love-text {
   font-family: var(--font-great-vibes);
   font-size: 2.8rem;
-  font-weight: normal;
-  color: #e11d48;
+  font-weight: 800;
+  background: linear-gradient(45deg, #ffffff, #d6c7c7);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: text-shine 3s linear infinite;
   margin: 0.5rem 0 0 0;
   text-align: center;
   z-index: 100;
