@@ -6,8 +6,7 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [loadingProgress, setLoadingProgress] = useState(0);
   const [modelError, setModelError] = useState(false);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [showAudioIcon, setShowAudioIcon] = useState(false);
+  const [audioPlaying, setAudioPlaying] = useState(false);
   const modelRef = useRef(null);
   const audioRef = useRef(null);
 
@@ -38,7 +37,23 @@ function App() {
       setLoading(false);
 
       // Putar audio setelah model dimuat
-      playAudio();
+      if (audioRef.current) {
+        // Mencoba autoplay dengan user interaction
+        const playPromise = audioRef.current.play();
+
+        if (playPromise !== undefined) {
+          playPromise
+            .then(() => {
+              setAudioPlaying(true);
+              console.log("Audio berhasil diputar otomatis");
+            })
+            .catch((error) => {
+              console.log("Autoplay tidak diizinkan:", error);
+              // Autoplay tidak diizinkan, tampilkan tombol play
+              setAudioPlaying(false);
+            });
+        }
+      }
     };
 
     // Tangani error loading
@@ -67,40 +82,6 @@ function App() {
     };
   }, [loading]);
 
-  // Fungsi untuk memutar audio
-  const playAudio = () => {
-    if (audioRef.current) {
-      audioRef.current.volume = 0.1;
-      setShowAudioIcon(true);
-
-      const playPromise = audioRef.current.play();
-
-      if (playPromise !== undefined) {
-        playPromise
-          .then(() => {
-            setIsPlaying(true);
-            console.log("Audio berhasil diputar");
-          })
-          .catch((error) => {
-            console.log("Autoplay tidak diizinkan:", error);
-            setIsPlaying(false);
-          });
-      }
-    }
-  };
-
-  // Toggle audio play/pause
-  const toggleAudio = () => {
-    if (audioRef.current) {
-      if (isPlaying) {
-        audioRef.current.pause();
-      } else {
-        audioRef.current.play();
-      }
-      setIsPlaying(!isPlaying);
-    }
-  };
-
   // Buat elemen petal untuk animasi
   const renderPetals = () => {
     const petals = [];
@@ -115,6 +96,18 @@ function App() {
       petals.push(<div className="petal" style={style} key={i}></div>);
     }
     return petals;
+  };
+
+  // Toggle audio play/pause
+  const toggleAudio = () => {
+    if (audioRef.current) {
+      if (audioPlaying) {
+        audioRef.current.pause();
+      } else {
+        audioRef.current.play();
+      }
+      setAudioPlaying(!audioPlaying);
+    }
   };
 
   return (
@@ -135,21 +128,23 @@ function App() {
 
       <div className="night"></div>
 
-      {/* Audio Container */}
-      <div id="audio-container">
-        <audio
-          id="song"
-          ref={audioRef}
-          loop
-          src="/audio/youll-be-in-my-heart.mp3"
-        ></audio>
+      {/* Audio Player */}
+      <audio
+        ref={audioRef}
+        src="/audio/youll-be-in-my-heart.mp3"
+        loop
+        preload="auto"
+      />
 
-        {showAudioIcon && (
-          <div className="audio-icon-wrapper" onClick={toggleAudio}>
-            <i className={isPlaying ? "bi bi-disc" : "bi bi-pause-circle"}></i>
-          </div>
-        )}
-      </div>
+      {/* Audio Control Button */}
+      <button
+        className="audio-control"
+        onClick={toggleAudio}
+        aria-label={audioPlaying ? "Pause music" : "Play music"}
+      >
+        {audioPlaying ? "🔊" : "🔇"}
+      </button>
+
       <div className="main-container">
         {/* Left side flowers */}
         <div className="flower-container flower-container--left">
